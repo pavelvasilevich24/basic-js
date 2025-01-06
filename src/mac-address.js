@@ -16,15 +16,13 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function isMAC48Address(n ) {
   const tempN = n.replaceAll('-', '');
- console.log(tempN);
- const tempNLength = tempN.length;
- const checkedN = tempN.match(/[0-9A-F][0-9A-F]/g).join('');
- console.log(checkedN);
- const checkedNLength = checkedN.length;
- if(tempNLength === checkedNLength){
-  return true;
- }
- return false;
+  const tempNLength = tempN.length;
+  const checkedN = tempN.match(/[0-9A-F][0-9A-F]/g).join('');
+  const checkedNLength = checkedN.length;
+  if(tempNLength === checkedNLength){
+    return true;
+  }
+  return false;
 }
 module.exports = {
   isMAC48Address
